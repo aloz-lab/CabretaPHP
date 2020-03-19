@@ -1,16 +1,16 @@
-<?php include('head.php');?>
+<?php include('layouts/head.php');?>
 
-<?php include('header.php');?>
+<?php include('layouts/header.php');?>
 
     <!-- CAROUSEL -->
     <section class="carousel">
         <div id="slider">
             <figure>
-            <img src="images/carousel/EveryDayLife-Bridg_People.jpg">
-            <img src="images/carousel/Art-1984Now.jpg">
-            <img src="images/carousel/Monuments-ThaîBuddhaz.jpg">
-            <img src="images/carousel/Landscape-WoodenRedBench.jpg">
-            <img src="images/carousel/Vacation-ThaîMonsoonRain.jpg">
+            <img src="assets/images/carousel/EveryDayLife-Bridg_People.jpg">
+            <img src="assets/images/carousel/Art-1984Now.jpg">
+            <img src="assets/images/carousel/Monuments-ThaîBuddhaz.jpg">
+            <img src="assets/images/carousel/Landscape-WoodenRedBench.jpg">
+            <!-- <img src="assets/images/carousel/Vacation-ThaîMonsoonRain.jpg">-->
             </figure>
         </div>
     </section>
@@ -33,4 +33,4 @@
     </section>
 
     <!-- Footer -->
-    <?php include('footer.php');?>
+    <?php include('layouts/footer.php');?>
