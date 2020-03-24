@@ -3,13 +3,13 @@
 <?php include('../layouts/header.php');?>
 
 <?php
-    if(isset($_POST)) {
+    if(isset($_POST) && isset($_POST['button'])) {
         $errors = [];
         if(empty($_POST['email'])) {
-            $errors['email'] = "Le champ email est obligatoire";
+            $errors['email'] = "*Le champ email est obligatoire";
         }
         if(empty($_POST['message'])) {
-            $errors['message'] = "Le champ message est obligatoire";
+            $errors['message'] = "*Le champ message est obligatoire";
         }
     }
 ?>
@@ -28,7 +28,7 @@
                 <input class="form-content" type="text" placeholder="Full name" name="fullname" tabindex="1" value=<?php if(isset($_POST['fullname'])) echo $_POST['fullname']; ?>>
                 
                 <label class="form-label" for="email"></label>
-                <input class="form-content" type="text" placeholder="E mail" name="email" tabindex="2" value=<?php if(isset($_POST['email'])) echo $_POST['email']; ?>>
+                <input class="form-content" type="email" placeholder="E mail*" name="email" tabindex="2" value=<?php if(isset($_POST['email'])) echo $_POST['email']; ?>>
                 <p class="error">
                     <?php if(isset($errors['email'])) { echo $errors['email'];} ?>
                 </p>
@@ -37,7 +37,7 @@
                 <input class="form-content" type="text" placeholder="Subject" name="subject" tabindex="3" value=<?php if(isset($_POST['subject'])) echo $_POST['subject']; ?>>
 
                 <label class="form-label" for="message"></label>
-                <textarea class="form-content" placeholder="Message" name="message" tabindex="4" rows="10"><?php if(isset($_POST['message'])) echo $_POST['message']; ?></textarea>
+                <textarea class="form-content" placeholder="Message*" name="message" tabindex="4" rows="10"><?php if(isset($_POST['message'])) echo $_POST['message']; ?></textarea>
                 <p class="error">
                     <?php if(isset($errors['message'])) { echo $errors['message'];} ?>
                 </p>
@@ -46,7 +46,7 @@
             </form>
 
             <?php
-                if(isset($_POST['button'])) {
+                if(isset($_POST['button']) && !empty($_POST['email']) && !empty($_POST['message'])){
             ?>
 
                   <p class="lead">
@@ -66,6 +66,7 @@
                         $content = "Le message suivant vous a été envoyé par " .$email." : " .$message;
                         $headers = "from " .$from;
                         mail($to, $subject, $content, $headers);
+
                         // Affichage de succès d'envoi de message
                         echo "Merci pour votre message " .$_POST['fullname'].", celui-ci a bien été envoyé.";
                       ?>

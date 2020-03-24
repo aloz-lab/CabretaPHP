@@ -1,6 +1,13 @@
-<?php include('layouts/head.php');?>
+<?php
+    include('layouts/head.php');
+    include('layouts/header.php');
 
-<?php include('layouts/header.php');?>
+    if(isset($_POST['logout'])) {
+        unset($_SESSION['isConnected']);
+        unset($_SESSION['username']);
+        session_destroy();
+    }
+?>
 
     <!-- CAROUSEL -->
     <section class="carousel">
