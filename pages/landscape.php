@@ -1,6 +1,9 @@
-<?php include('../layouts/head.php');?>
+<?php
+session_start();
 
-<?php include('../layouts/header.php');?>
+include('../layouts/head.php');
+include('../layouts/header.php');
+?>
 
     <!-- LANDSCAPE -->
     <section class="grid-images">

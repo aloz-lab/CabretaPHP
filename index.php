@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     include('layouts/head.php');
     include('layouts/header.php');
 

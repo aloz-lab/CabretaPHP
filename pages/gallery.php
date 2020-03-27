@@ -1,6 +1,10 @@
-<?php include('../layouts/head.php');?>
+<?php
+    session_start();
 
-<?php include('../layouts/header.php');?>
+    include('../layouts/head.php');
+    include('../layouts/header.php');
+?>
+
 
     <!-- GALLERY -->
     <h1>Gallery</h1>

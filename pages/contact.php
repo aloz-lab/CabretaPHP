@@ -1,14 +1,17 @@
-<?php include('../layouts/head.php');?>
+<?php
+session_start();
 
-<?php include('../layouts/header.php');?>
+include('../layouts/head.php');
+include('../layouts/header.php');
+?>
 
 <?php
-    if(isset($_POST) && isset($_POST['button'])) {
+    if(isset($_POST) && isset($_POST['button'])){
         $errors = [];
-        if(empty($_POST['email'])) {
+        if(empty($_POST['email'])){
             $errors['email'] = "*Le champ email est obligatoire";
         }
-        if(empty($_POST['message'])) {
+        if(empty($_POST['message'])){
             $errors['message'] = "*Le champ message est obligatoire";
         }
     }
