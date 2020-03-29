@@ -3,6 +3,7 @@
 
     include('../layouts/head.php');
     include('../layouts/header.php');
+    include('../controller/controller.php');
 
     //LOGIN
 
@@ -15,15 +16,17 @@
             $errors['emptyPassword'] = "* Le champ password est obligatoire";
         }
 
-        if(!empty($_POST['password']) && !empty($_POST['username']) && $_POST['password'] === '1234') {
-            $_SESSION['username'] = $_POST['username'];
-            $_SESSION['isConnected'] = true;
-            if ($_SESSION['isConnected'] === true) {
-                header('Location: http://localhost:8000/pages/profile.php');
-            }
-        } else {
-            $errors['errorPassword'] = "** Votre mot de passe est incorrect **";
-        }
+        login($_POST);
+
+        //if(!empty($_POST['password']) && !empty($_POST['username']) && $_POST['password'] === '1234') {
+            //$_SESSION['username'] = $_POST['username'];
+            //$_SESSION['isConnected'] = true;
+            //if ($_SESSION['isConnected'] === true) {
+              //  header('Location: http://localhost:8000/pages/profile.php');
+            //}
+        //} else {
+          //  $errors['errorPassword'] = "** Votre mot de passe est incorrect **";
+        //}
     }
 
  ?>

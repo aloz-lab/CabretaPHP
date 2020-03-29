@@ -3,11 +3,10 @@
 
     include('layouts/head.php');
     include('layouts/header.php');
+    include('controller/controller.php');
 
     if(isset($_POST['logout'])) {
-        unset($_SESSION['isConnected']);
-        unset($_SESSION['username']);
-        session_destroy();
+        logout();
     }
 ?>
 
